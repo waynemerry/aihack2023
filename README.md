@@ -4,10 +4,16 @@ Melbourne AI Hackathon 2023
 12:30 18/11 Noting Conversation with Jamie and Lucas who accepted the private VAFA sourced injury data licensed to
 the charity Communities and made available by them to the Hackathon team
 
-# InjuriesNet
+# InjuriesNet: Enhancing Recovery through Predictive Analytics Content
 ![](img/InjuriesNet_logo_final.jpg)
 
 InjuriesNet is an AI...
+
+### Problem:
+
+### Proposed Solution:
+
+### Why using AI?
 
 ## Table of Contents
 1. [Demo](#demo)
