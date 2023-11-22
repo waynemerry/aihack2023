@@ -5,7 +5,11 @@ Melbourne AI Hackathon 2023
 the charity Communities and made available by them to the Hackathon team
 
 # InjuriesNet: Enhancing Recovery through Predictive Analytics Content
-![](img/InjuriesNet_logo_final.jpg)
+<p align="center">
+  <img src="img/InjuriesNet_logo_final.jpg" alt="Image" width="500"/>
+</p>
+
+
 
 InjuriesNet is an AI...
 
