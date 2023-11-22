@@ -6,4 +6,4 @@ the charity Communities and made available by them to the Hackathon team
 
 # InjuriesNet
 
-![alt text]([https://github.com/waynemerry/aihack2023/raw/main/image.jpg](https://github.com/waynemerry/aihack2023/blob/main/img/InjuriesNet_logo_final%20copy.jpg)https://github.com/waynemerry/aihack2023/blob/main/img/InjuriesNet_logo_final%20copy.jpg)
+![](img/InjuriesNet_logo_final.jpg)
