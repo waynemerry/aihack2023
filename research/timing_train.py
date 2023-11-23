@@ -6,11 +6,13 @@ import tqdm
 import torch
 import torch.nn as nn
 import torch.optim as optim
+import matplotlib.pyplot as plt
 
+from sklearn.metrics import roc_curve
 from torch.utils.data import Dataset, DataLoader
 from models import LSTMModel, LinearModel, Simple, Deep, Deeper
 
-from sklearn.model_selection import StratifiedKFold
+from sklearn.model_selection import StratifiedKFold, train_test_split
 
 def model_train(model, X_train, y_train, X_val, y_val):
         # loss function and optimizer
@@ -69,10 +71,11 @@ if __name__ == "__main__":
     X = torch.tensor(X.values, dtype=torch.float32)
     y = torch.tensor(y.values, dtype=torch.float32).reshape(-1, 1)
 
+    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.9, shuffle=True)
     kfold = StratifiedKFold(n_splits=5, shuffle=True)
 
     cv_scores = []
-    for train, test in kfold.split(X, y):
+    for train, test in kfold.split(X_train, y_train):
     # create model, train, and get accuracy
         model = Deep()
         acc = model_train(model, X[train], y[train], X[test], y[test])
@@ -84,6 +87,28 @@ if __name__ == "__main__":
     print("Model accuracy: %.2f%% (+/- %.2f%%)" % (acc*100, std*100))
 
     print('test')
+
+    acc = model_train(model, X_train, y_train, X_test, y_test)
+    print(f"Final model accuracy: {acc*100:.2f}%")
+
+    model.eval()
+    threshold = 0.5
+    with torch.no_grad():
+        # Test out inference with 5 samples
+        for i in range(X_test.shape[0]):
+            y_pred = model(X_test[i:i+1])
+            print(f"{X_test[i].numpy()} -> {int(y_pred[0].numpy() > threshold)} (expected {y_test[i].numpy()})")
+    
+        # Plot the ROC curve
+        y_pred = model(X_test)
+        fpr, tpr, thresholds = roc_curve(y_test, y_pred)
+        plt.plot(fpr, tpr) # ROC curve = TPR vs FPR
+        plt.title("Receiver Operating Characteristics")
+        plt.xlabel("False Positive Rate")
+        plt.ylabel("True Positive Rate")
+        plt.show()
+
+
 
 
     
