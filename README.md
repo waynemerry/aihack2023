@@ -9,25 +9,26 @@ the charity Communities and made available by them to the Hackathon team
   <img src="img/InjuriesNet_logo_final.jpg" alt="Image" width="500"/>
 </p>
 
+## Table of Contents
+1. [General Information](#general-information)
+2. [Demo](#demo)
+3. [Use Cases](#use-cases)
+4. [Built with](#built-with)
+5. [Credits and Acknowledgments](#credits-and-acknowledgments)
+6. [Contact](#contact)
 
-
+## General Information
 InjuriesNet is an AI...
 
-#### Problem: 
+#### 🔍 Problem: 
 Specialist Direct and Personify need automation via machine learning to scale their effective sports injury recovery management, as current manual processes rely on human intervention to detect recovery issues and insufficient patient feedback
 
-#### Proposed Solution: 
+#### 💡 Proposed Solution: 
 A Predictive Analytics Model with two main components: predicting recovery progress and monitoring survey adherence.
 
-#### Future Directions: 
+#### 🚀 Future Directions: 
 Extend the ML approach to various healthcare settings, aiming for cost-effective care and supporting AI research in a remote Northern Territory community.
 
-## Table of Contents
-1. [Demo](#demo)
-2. [Use Cases](#use-cases)
-3. [Built with](#built-with)
-4. [Credits and Acknowledgments](#credits-and-acknowledgments)
-5. [Contact](#contact)
    
 
 ## Demo
@@ -46,6 +47,7 @@ Extend the ML approach to various healthcare settings, aiming for cost-effective
 
 
 ## Credits and Acknowledgments
+Many thanks to Victorian Amateur Football Association(VAFA)
 
 
 ## Contact
