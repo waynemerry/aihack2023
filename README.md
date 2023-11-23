@@ -13,11 +13,14 @@ the charity Communities and made available by them to the Hackathon team
 
 InjuriesNet is an AI...
 
-### Problem:
+#### Problem: 
+Specialist Direct and Personify need automation via machine learning to scale their effective sports injury recovery management, as current manual processes rely on human intervention to detect recovery issues and insufficient patient feedback
 
-### Proposed Solution:
+#### Proposed Solution: 
+A Predictive Analytics Model with two main components: predicting recovery progress and monitoring survey adherence.
 
-### Why using AI?
+#### Future Directions: 
+Extend the ML approach to various healthcare settings, aiming for cost-effective care and supporting AI research in a remote Northern Territory community.
 
 ## Table of Contents
 1. [Demo](#demo)
