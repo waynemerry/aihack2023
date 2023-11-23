@@ -6,10 +6,10 @@ the charity Communities and made available by them to the Hackathon team
 
 # InjuriesNet: Enhancing Recovery through Predictive Analytics Content
 <p align="center">
-  <img src="img/InjuriesNet_logo_final.jpg" alt="Image" width="500"/>
+  <img src="img/InjuriesNet_logo_final.jpg" alt="Image" width="700"/>
 </p>
 
-## Table of Contents
+## 🔗 Table of Contents
 1. [General Information](#general-information)
 2. [Demo](#demo)
 3. [Use Cases](#use-cases)
@@ -17,7 +17,7 @@ the charity Communities and made available by them to the Hackathon team
 5. [Credits and Acknowledgments](#credits-and-acknowledgments)
 6. [Contact](#contact)
 
-## General Information
+## 🔭 General Information
 InjuriesNet is an AI...
 
 #### 🔍 Problem: 
@@ -31,13 +31,13 @@ Extend the ML approach to various healthcare settings, aiming for cost-effective
 
    
 
-## Demo
+## 📦 Demo
 
 
-## Use Cases
+## 📚 Use Cases
 
 
-## Built with
+## 🛠 Built with
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
@@ -46,9 +46,10 @@ Extend the ML approach to various healthcare settings, aiming for cost-effective
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 
 
-## Credits and Acknowledgments
-Many thanks to Victorian Amateur Football Association(VAFA)
+## 👏 Credits and Acknowledgments
+Many thanks to:
+- [Victorian Amateur Football Association(VAFA)](https://www.vafa.com.au/)
 
 
-## Contact
+## 📧 Contact
 For any questions or inquiries, feel free to reach out to us via:
