@@ -40,21 +40,25 @@ class Deep(nn.Module):
         super().__init__()
         self.layer1 = nn.Linear(input, 20)
         self.act1 = nn.ReLU()
+        self.dropout1 = nn.Dropout(0.5)
         self.layer2 = nn.Linear(20, 20)
         self.act2 = nn.ReLU()
         self.layer3 = nn.Linear(20, 20)
         self.act3 = nn.ReLU()
+        self.dropout2 = nn.Dropout(0.5)
         self.output = nn.Linear(20, 1)
         self.sigmoid = nn.Sigmoid()
  
     def forward(self, x):
         x = self.act1(self.layer1(x))
+        x = self.dropout1(x)
         x = self.act2(self.layer2(x))
+        x = self.dropout2(x)
         x = self.act3(self.layer3(x))
         x = self.sigmoid(self.output(x))
         return x
     
-class Deep(nn.Module):
+class Deeper(nn.Module):
     def __init__(self):
         super().__init__()
         self.layer1 = nn.Linear(input, 20)
@@ -63,6 +67,10 @@ class Deep(nn.Module):
         self.act2 = nn.ReLU()
         self.layer3 = nn.Linear(20, 20)
         self.act3 = nn.ReLU()
+        self.layer4 = nn.Linear(20, 20)
+        self.act4 = nn.ReLU()
+        self.layer5 = nn.Linear(20, 20)
+        self.act5 = nn.ReLU()
         self.output = nn.Linear(20, 1)
         self.sigmoid = nn.Sigmoid()
  
@@ -70,5 +78,36 @@ class Deep(nn.Module):
         x = self.act1(self.layer1(x))
         x = self.act2(self.layer2(x))
         x = self.act3(self.layer3(x))
+        x = self.act4(self.layer4(x))
+        x = self.act5(self.layer5(x))
+        x = self.sigmoid(self.output(x))
+        return x
+    
+class DeeperDropout(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.layer1 = nn.Linear(input, 20)
+        self.act1 = nn.ReLU()
+        self.dropout1 = nn.Dropout(0.2)
+        self.layer2 = nn.Linear(20, 20)
+        self.act2 = nn.ReLU()
+        self.layer3 = nn.Linear(20, 20)
+        self.act3 = nn.ReLU()
+        self.layer4 = nn.Linear(20, 20)
+        self.act4 = nn.ReLU()
+        self.dropout2 = nn.Dropout(0.2)
+        self.layer5 = nn.Linear(20, 20)
+        self.act5 = nn.ReLU()
+        self.output = nn.Linear(20, 1)
+        self.sigmoid = nn.Sigmoid()
+ 
+    def forward(self, x):
+        x = self.act1(self.layer1(x))
+        x = self.dropout1(x)
+        x = self.act2(self.layer2(x))
+        x = self.act3(self.layer3(x))
+        x = self.act4(self.layer4(x))
+        x = self.dropout2(x)
+        x = self.act5(self.layer5(x))
         x = self.sigmoid(self.output(x))
         return x
