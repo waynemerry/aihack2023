@@ -30,10 +30,10 @@ class TimeSeriesData:
         self.time_diff_entries  = deque(np.zeros(max_entries))
         self.input_flags        = deque(np.zeros(max_entries))
         
-        self.pain_scale_entries.append(float(intial_pain_scale/10))
+        self.pain_scale_entries.append(float(intial_pain_scale))
         self.pain_scale_entries.popleft()
 
-        self.mood_scale_entries.append(float(initial_mood_scale/10))
+        self.mood_scale_entries.append(float(initial_mood_scale))
         self.mood_scale_entries.popleft()
 
         self.input_flags.append(float(1))
@@ -45,17 +45,17 @@ class TimeSeriesData:
 
     def update(self, pain_scale, mood_scale, recorded_time, time_string, progression, timing):
 
-        self.pain_scale_entries.append(float(pain_scale/10))
+        self.pain_scale_entries.append(float(pain_scale))
         self.pain_scale_entries.popleft()
 
-        self.mood_scale_entries.append(float(mood_scale/10))
+        self.mood_scale_entries.append(float(mood_scale))
         self.mood_scale_entries.popleft()
 
         self.current_record_time = float((recorded_time - self.initial_day).days + get_time(time_string))
 
         time_diff = self.current_record_time - self.previous_record_time
         
-        self.time_diff_entries.append(float(time_diff)/14)
+        self.time_diff_entries.append(float(time_diff))
         self.mood_scale_entries.popleft()
 
         self.input_flags.append(float(1))
