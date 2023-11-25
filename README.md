@@ -12,7 +12,7 @@ the charity Communities and made available by them to the Hackathon team.
 ## 🔗 Table of Contents
 1. [General Information](#general-information)
 2. [Demo](#demo)
-3. [Use Cases](#use-cases)
+3. [How to install](#how-to-install)
 4. [Built with](#built-with)
 5. [Credits and Acknowledgments](#credits-and-acknowledgments)
 6. [Contact](#contact)
@@ -33,8 +33,8 @@ Extend the ML approach to various healthcare settings, aiming for cost-effective
 ## 📦 Demo
 
 
-## 📚 Use Cases
-
+## 📚 How to install
+Please read build instructions about the machine learning model in the ![readme file](https://github.com/waynemerry/aihack2023/blob/main/data_scripts/README.md).
 
 ## 🛠 Built with
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
@@ -45,7 +45,6 @@ Extend the ML approach to various healthcare settings, aiming for cost-effective
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 
-Please read build instructions about the machine learning model in the ![readme file](https://github.com/waynemerry/aihack2023/blob/main/data_scripts/README.md).
 
 ## 👏 Credits and Acknowledgments
 Many thanks to:
