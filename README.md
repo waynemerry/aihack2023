@@ -31,6 +31,7 @@ Extend the ML approach to various healthcare settings, aiming for cost-effective
 
 
 ## 📦 Demo
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HAFV8rISZJc/0.jpg)](https://www.youtube.com/watch?v=HAFV8rISZJc)
 
 
 ## 📚 How to install
