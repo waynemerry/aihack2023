@@ -2,7 +2,7 @@
 Melbourne AI Hackathon 2023
 
 12:30 18/11 Noting Conversation with Jamie and Lucas who accepted the private VAFA sourced injury data licensed to
-the charity Communities and made available by them to the Hackathon team
+the charity Communities and made available by them to the Hackathon team.
 
 # InjuriesNet: Enhancing Recovery through Predictive Analytics Content
 <p align="center">
@@ -29,7 +29,6 @@ A Predictive Analytics Model with two main components: predicting recovery progr
 #### 🚀 Future Directions: 
 Extend the ML approach to various healthcare settings, aiming for cost-effective care and supporting AI research in a remote Northern Territory community.
 
-   
 
 ## 📦 Demo
 
@@ -46,6 +45,7 @@ Extend the ML approach to various healthcare settings, aiming for cost-effective
 ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
 
+Please read build instructions about the machine learning model in the ![readme file](https://github.com/waynemerry/aihack2023/blob/main/data_scripts/README.md).
 
 ## 👏 Credits and Acknowledgments
 Many thanks to:
