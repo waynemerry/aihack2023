@@ -13,36 +13,6 @@ from sklearn.metrics import roc_curve
 from models import LSTMModel, LinearModel, Simple, Deep, Deeper
 from sklearn.model_selection import StratifiedKFold, train_test_split
 
-class TimeSeriesDataset(Dataset):
-    def __init__(self, data_file, device = 'cpu', mode = "train"):
-        self.data   = pd.read_csv(data_file)
-        self.device = device
-        self.mode   = mode
-        
-    def __len__(self):
-
-        if self.mode == "train":
-            return int(self.data.shape[0]*0.9)
-        elif self.mode == "val":
-            return self.data.shape[0] - int(self.data.shape[0]*0.9)
-        else:
-            return self.data.shape[0]
-        
-
-    def __getitem__(self, idx):
-        
-        if self.mode == "val":
-            index = idx + int(self.data.shape[0]*0.9)
-        else:
-            index = idx
-
-        features = np.array(self.data.iloc[index, 1:-2])
-
-        x = torch.tensor(features.astype(np.float32), device = self.device)
-        y = torch.tensor(np.array(self.data.iloc[index, -2:]).astype(np.float32), device = self.device)
-
-        return x, y
-
 def model_train(model, X_train, y_train, X_val, y_val):
         # loss function and optimizer
     loss_fn = nn.BCELoss()  # binary cross entropy
@@ -137,8 +107,8 @@ if __name__ == "__main__":
         plt.title("Receiver Operating Characteristics")
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
-        plt.show()
+        plt.show(block=False)
 
-
+    torch.save(model.state_dict(), r'models\progression_model.pt')
 
     

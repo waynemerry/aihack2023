@@ -19,7 +19,7 @@ def model_train(model, X_train, y_train, X_val, y_val):
     loss_fn = nn.BCELoss()  # binary cross entropy
     optimizer = optim.Adam(model.parameters(), lr=0.01)
  
-    n_epochs = 2000   # number of epochs to run
+    n_epochs = 1000   # number of epochs to run
     batch_size = 10  # size of each batch
     batch_start = torch.arange(0, len(X_train), batch_size)
  
@@ -64,6 +64,7 @@ def model_train(model, X_train, y_train, X_val, y_val):
 if __name__ == "__main__":
 
     time_series_data = pd.read_csv(r'data\time_series_data.csv')
+    model = Deep()
 
     X = time_series_data.iloc[:, 26:31]
     y = time_series_data.iloc[:, -1]
@@ -77,16 +78,14 @@ if __name__ == "__main__":
     cv_scores = []
     for train, test in kfold.split(X_train, y_train):
     # create model, train, and get accuracy
-        model = Deep()
+        
         acc = model_train(model, X[train], y[train], X[test], y[test])
         print("Accuracy (wide): %.2f" % acc)
         cv_scores.append(acc)
 
     acc = np.mean(cv_scores)
     std = np.std(cv_scores)
-    print("Model accuracy: %.2f%% (+/- %.2f%%)" % (acc*100, std*100))
-
-    print('test')
+    print("Model accuracy: \n%.2f%% (+/- %.2f%%)" % (acc*100, std*100))
 
     acc = model_train(model, X_train, y_train, X_test, y_test)
     print(f"Final model accuracy: {acc*100:.2f}%")
@@ -106,8 +105,9 @@ if __name__ == "__main__":
         plt.title("Receiver Operating Characteristics")
         plt.xlabel("False Positive Rate")
         plt.ylabel("True Positive Rate")
-        plt.show()
+        plt.show(block=False)
 
+    torch.save(model.state_dict(), r'models\timing_model.pt')
 
 
 
