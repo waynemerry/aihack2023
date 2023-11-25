@@ -34,8 +34,7 @@ pip install -r data_scripts\requirements.txt
 
 ### Data
 
-We are using private private VAFA sourced injury data licensed to the charity communities and made available by them to the Hackathon team. Contact 
-waynemerry@greatcommunities.com.au for accessing the data.  The data available in Postgres databases which can be accessed through a docker container. We filtered and reformatted into an an excel file. 
+We utilize exclusive injury data sourced from private VAFA, licensed to charitable communities, and provided to the Hackathon team by them. For access to the data, please contact [waynemerry@greatcommunities.com.au](mailto:waynemerry@greatcommunities.com.au). The data is stored in Postgres databases, accessible through a docker container. We have filtered and reformatted it into an Excel file.
 
 Save the data under folder named data in repository.
 
@@ -44,7 +43,9 @@ $ cd aihack2023
 $ mkdir data
 ```
 
-We decided to model **Progression**and **Timing** information from the data. **Progression** is a Boolean value represents  patient's current wellbeing with respect to historical records. **Timing** is a Boolean value represents whether the patient's recording intervals are enough based on patient's current wellbeing. We are using historical pain, mood and record interval time of the patient to predict Progression and Timing. The reformatted excel data contains all patients records which need to be converted to time series data as Progression and Timing are depends on historical records of the patient. 
+We have chosen to model Progression and Timing information from the data. Progression is a Boolean value that represents the patient's current well-being in relation to historical records. Timing is a Boolean value that indicates whether the patient's recording intervals are sufficient based on their current well-being. To predict Progression and Timing, we utilize the patient's historical data on pain, mood, and recording interval times.
+
+The reformatted Excel data encompasses all patient records, which must be converted into time series data, as Progression and Timing depend on the patient's historical records.
 
 Run following script for time series data generation. 
 
@@ -52,7 +53,7 @@ Run following script for time series data generation.
 $ python data_scripts\timeseries_data_generation.py
 ```
 
-This creates a csv file with time series data of pain, mood and records interval with progression and timing labels in data folder.  We trained binary classification models for Progression and Timing separately.  The models are neural networks with linear, relu and sigmoid activation functions (defined in file data_scripts\models.py ). 
+This generates a CSV file containing time series data of pain, mood, and record intervals, along with progression and timing labels in the 'data' folder. We trained binary classification models for Progression and Timing separately. The models are neural networks with linear, ReLU, and sigmoid activation functions, as defined in the file 'data_scripts\models.py'. 
 
 Run following script for training progression model.
 
@@ -66,4 +67,4 @@ Run following script for training timing model.
 $ python data_scripts\train_timing.py
 ```
 
-We tested different model architectures by changing  depth, width and keeping dropout layers but not observed any change in accuracy. We observed that model producing grater than 90% accuracy in in our validation data which is proving the model is good enough for predicting Progression and Timing with historical data. 
+We tested various model architectures by adjusting depth and width while maintaining dropout layers, but did not observe any changes in accuracy. We noticed that the model consistently achieved an accuracy greater than 90% on our validation data, indicating its effectiveness in predicting Progression and Timing using historical data.
