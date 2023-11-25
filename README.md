@@ -31,11 +31,12 @@ Extend the ML approach to various healthcare settings, aiming for cost-effective
 
 
 ## 📦 Demo
+• 5-min video
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/HAFV8rISZJc/0.jpg)](https://www.youtube.com/watch?v=HAFV8rISZJc)
 
 
-## 📚 How to install
-Please read build instructions about the machine learning model in the ![readme file](https://github.com/waynemerry/aihack2023/blob/main/data_scripts/README.md).
+## 📚 How to run the code
+Please read build instructions about the machine learning model in the ![README.md](https://github.com/waynemerry/aihack2023/blob/main/data_scripts/README.md).
 
 ## 🛠 Built with
 ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
