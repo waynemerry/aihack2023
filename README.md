@@ -18,7 +18,7 @@ the charity Communities and made available by them to the Hackathon team
 6. [Contact](#contact)
 
 ## 🔭 General Information
-InjuriesNet is an AI...
+InjuriesNet is an AI-driven predictive analytics model designed to automate sports injury recovery management. It enhances efficiency by predicting recovery progress and ensuring patient adherence to treatment plans. The model aims to evolve for broader healthcare applications, focusing on cost-effective and accessible care in various settings, including remote communities.
 
 #### 🔍 Problem: 
 Specialist Direct and Personify need automation via machine learning to scale their effective sports injury recovery management, as current manual processes rely on human intervention to detect recovery issues and insufficient patient feedback
