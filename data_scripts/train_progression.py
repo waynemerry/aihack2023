@@ -64,8 +64,8 @@ if __name__ == "__main__":
 
     time_series_data = pd.read_csv(r'data\time_series_data.csv')
 
-    X = time_series_data.iloc[:, 6:11]
-    y = time_series_data.iloc[:, -2:-1]
+    X = time_series_data.iloc[:, 1:-2]
+    y = time_series_data.iloc[:, -2]
 
     X = torch.tensor(X.values, dtype=torch.float32)
     y = torch.tensor(y.values, dtype=torch.float32).reshape(-1, 1)
@@ -76,9 +76,10 @@ if __name__ == "__main__":
 
     # Training
     cv_scores = []
+    model = Deep(X.shape[1])
+
     for train, test in kfold.split(X_train, y_train):
     # create model, train, and get accuracy
-        model = Deep()
         acc = model_train(model, X[train], y[train], X[test], y[test])
         print("Accuracy: %.2f" % acc)
         cv_scores.append(acc)

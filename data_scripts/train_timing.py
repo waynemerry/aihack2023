@@ -64,9 +64,8 @@ def model_train(model, X_train, y_train, X_val, y_val):
 if __name__ == "__main__":
 
     time_series_data = pd.read_csv(r'data\time_series_data.csv')
-    model = Deep()
 
-    X = time_series_data.iloc[:, 26:31]
+    X = time_series_data.iloc[:, 1:-2]
     y = time_series_data.iloc[:, -1]
 
     X = torch.tensor(X.values, dtype=torch.float32)
@@ -76,11 +75,13 @@ if __name__ == "__main__":
     kfold = StratifiedKFold(n_splits=5, shuffle=True)
 
     cv_scores = []
+    model = Deep(X.shape[1])
+
     for train, test in kfold.split(X_train, y_train):
     # create model, train, and get accuracy
         
         acc = model_train(model, X[train], y[train], X[test], y[test])
-        print("Accuracy (wide): %.2f" % acc)
+        print("Accuracy: %.2f" % acc)
         cv_scores.append(acc)
 
     acc = np.mean(cv_scores)

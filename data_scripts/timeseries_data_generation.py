@@ -7,7 +7,7 @@ from collections import deque
 
 
 # hardcoding maximum entries in the time series observation to 20
-max_entries = 10
+max_entries = 5
 
 def get_time(time_string):
 
@@ -26,18 +26,13 @@ class TimeSeriesData:
         
         self.pain_scale_entries = deque(np.zeros(max_entries))
         self.mood_scale_entries = deque(np.zeros(max_entries))
-
         self.time_diff_entries  = deque(np.zeros(max_entries))
-        self.input_flags        = deque(np.zeros(max_entries))
         
         self.pain_scale_entries.append(float(intial_pain_scale))
         self.pain_scale_entries.popleft()
 
         self.mood_scale_entries.append(float(initial_mood_scale))
         self.mood_scale_entries.popleft()
-
-        self.input_flags.append(float(1))
-        self.input_flags.popleft()
 
         self.initial_day = pd.to_datetime('1900-01-01 00:00:00')
 
@@ -56,12 +51,10 @@ class TimeSeriesData:
         time_diff = self.current_record_time - self.previous_record_time
         
         self.time_diff_entries.append(float(time_diff))
-        self.mood_scale_entries.popleft()
-
-        self.input_flags.append(float(1))
-        self.input_flags.popleft()
+        self.time_diff_entries.popleft()
 
         self.previous_record_time =  self.current_record_time
+
         self.progression =  float(progression)
         self.timing      =  float(timing)
 
@@ -71,9 +64,8 @@ class TimeSeriesData:
         pain_entries = list(self.pain_scale_entries)
         mood_entries = list(self.mood_scale_entries)
         time_diffs   = list(self.time_diff_entries)
-        input_flags  = list(self.input_flags)
 
-        return pain_entries + mood_entries + time_diffs + input_flags
+        return pain_entries + mood_entries + time_diffs 
         
 
     def get_target(self):
@@ -94,9 +86,9 @@ if __name__ == "__main__":
     pain_entries_header = [f"pain_scale_{i}" for i in range(max_entries)]
     mood_entries_header = [f"mood_scale_{i}" for i in range(max_entries)]
     time_diff_header    = [f"time_diff_{i}" for i in range(max_entries)]
-    input_flags_header  = [f"input_flag_{i}" for i in range(max_entries)]
 
-    feature_header      = pain_entries_header + mood_entries_header + time_diff_header + input_flags_header
+
+    feature_header      = pain_entries_header + mood_entries_header + time_diff_header
     target_header       = ['progression', 'timing']
 
 
