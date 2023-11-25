@@ -1,4 +1,5 @@
 import torch.nn as nn
+input = 5
 
 class LSTMModel(nn.Module):
     def __init__(self):
@@ -20,7 +21,6 @@ class LinearModel(nn.Module):
         x = self.linear(x)
         return x
 
-input = 5
 
 class Simple(nn.Module):
     def __init__(self):
