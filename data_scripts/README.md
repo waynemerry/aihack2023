@@ -55,6 +55,8 @@ $ python data_scripts\timeseries_data_generation.py
 
 This generates a CSV file containing time series data of pain, mood, and record intervals, along with progression and timing labels in the 'data' folder. We trained binary classification models for Progression and Timing separately. The models are neural networks with linear, ReLU, and sigmoid activation functions, as defined in the file 'data_scripts\models.py'. 
 
+### Training
+
 Run following script for training progression model.
 
 ```bash
